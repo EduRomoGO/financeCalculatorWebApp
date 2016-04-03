@@ -1,0 +1,20 @@
+{
+  "name": "calc",
+  "version": "0.0.0",
+  "description": "finance",
+  "main": "Calculator.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "finance"
+  ],
+  "author": "EduRomoGO",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0"
+  }
+}
