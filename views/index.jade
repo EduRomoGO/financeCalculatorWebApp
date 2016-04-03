@@ -1,0 +1,25 @@
+extends ./layout.jade
+
+block head
+	title TAE Calculator
+	//script(src="bower_components/jquery/dist/jquery.min.js")
+
+block body
+	h1 Calculate TAE
+
+	script(type="text/javascript").
+		console.log('hello world');
+
+	div.taeFormWrapper
+		form(name="taeForm")
+			input(type="number", name="tin", id='tin')
+			input(type="number", name="paymentFrequency", id='paymentFrequency')
+			input(type="button", value="Calculate", id='calculateButton')
+
+	script.
+		var button = document.getElementById('calculateButton');
+		console.log(button);
+		console.log('script');
+		$('#calculateButton').on('click', function() {
+			console.log('hi');
+		});

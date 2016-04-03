@@ -8,11 +8,16 @@ var Calculator = require('./Calculator'),
 		app, tae, myCalc;
 
 app = express();
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
-app.get('/', function () {
+app.get('/', function (req, res) {
 	myCalc = new Calculator();
 	tae = myCalc.calculateTae(tin, interestsPaymentFrequency);
 	console.log('The TAE calculated is: ' + tae);
+	res.render('index',
+	  { title : 'Home' }
+	 );
 });
 
 app.listen(port);
