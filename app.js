@@ -1,14 +1,19 @@
 'use strict';
 
 var Calculator = require('./Calculator'),
-		classInspector = require('./classInspector'),
+		express = require('express'),
 		tin = 5,
 		interestsPaymentFrequency = 1,
-		tae;
+		port = 2233,
+		app, tae, myCalc;
 
-var myCalc = new Calculator();
+app = express();
 
-tae = myCalc.calculateTae(tin, interestsPaymentFrequency);
-console.log('The TAE calculated is: ' + tae);
+app.get('/', function () {
+	myCalc = new Calculator();
+	tae = myCalc.calculateTae(tin, interestsPaymentFrequency);
+	console.log('The TAE calculated is: ' + tae);
+});
 
-//classInspector(myCalc);
+app.listen(port);
+console.log('server listening on port: ' + port);

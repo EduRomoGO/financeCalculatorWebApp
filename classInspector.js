@@ -1,5 +1,7 @@
 'use strict';
 
+/* jshint ignore:start */
+
 function xinspect(o,i){
   if(typeof i=='undefined')i='';
   if(i.length>50)return '[MAX ITERATIONS]';
@@ -15,3 +17,4 @@ function xinspect(o,i){
 }
 
 module.exports = xinspect;
+/* jshint ignore:end */
