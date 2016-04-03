@@ -2,6 +2,7 @@
 
 var Calculator = require('./Calculator'),
 		express = require('express'),
+		bodyParser = require('body-parser'),
 		tin = 5,
 		interestsPaymentFrequency = 1,
 		port = 2233,
@@ -10,9 +11,10 @@ var Calculator = require('./Calculator'),
 app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-// app.use(express.static(__dirname + 'bower_components'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/js', express.static(__dirname + '/front/js'));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.get('/', function (req, res) {
 	myCalc = new Calculator();
@@ -21,6 +23,11 @@ app.get('/', function (req, res) {
 	res.render('index',
 	  { title : 'Home' }
 	 );
+});
+
+app.post('/tae', function(req, res) {
+	var val = req.body.tin;
+	res.send('tin ' + val);
 });
 
 app.listen(port);

@@ -1,6 +1,8 @@
 var button = document.getElementById('calculateButton');
-		console.log(button);
-		console.log('script');
-		$('#calculateButton').on('click', function() {
-			console.log('hi');
-		});
+
+$('#calculateButton').on('click', function() {
+	var params = { tin: 3 };
+	$.post('/tae', params, function(data) {
+		console.log(data);
+	});
+});
