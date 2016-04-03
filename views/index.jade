@@ -13,10 +13,4 @@ block body
 			input(type="number", name="paymentFrequency", id='paymentFrequency')
 			input(type="button", value="Calculate", id='calculateButton')
 
-	script(type="text/javascript").
-		var button = document.getElementById('calculateButton');
-		console.log(button);
-		console.log('script');
-		$('#calculateButton').on('click', function() {
-			console.log('hi');
-		});
+	script(src="js/taeFormHandler.js")
