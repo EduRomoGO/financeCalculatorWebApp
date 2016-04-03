@@ -9,8 +9,11 @@ block body
 
 	div.taeFormWrapper
 		form(name="taeForm")
+			div.label TIN
 			input(type="number", name="tin", id='tin')
+			div.label Interest payment frequency
 			input(type="number", name="paymentFrequency", id='paymentFrequency')
+			div.actions
 			input(type="button", value="Calculate", id='calculateButton')
 
 	div.taeResult

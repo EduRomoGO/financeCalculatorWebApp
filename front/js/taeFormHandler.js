@@ -6,6 +6,6 @@ $('#calculateButton').on('click', function() {
 		paymentFrequency: $('#paymentFrequency').val()
 	};
 	$.post('/tae', params, function(data) {
-		$('.taeResult').html('The tae calculated is: ' + data.tae);
+		$('.taeResult').html('<br>The tae calculated is: ' + data.tae);
 	});
 });
