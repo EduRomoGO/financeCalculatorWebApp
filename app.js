@@ -3,8 +3,6 @@
 var Calculator = require('./Calculator'),
 		express = require('express'),
 		bodyParser = require('body-parser'),
-		tin = 5,
-		interestsPaymentFrequency = 1,
 		port = 2233,
 		app, tae, myCalc;
 
@@ -17,17 +15,16 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 app.get('/', function (req, res) {
-	myCalc = new Calculator();
-	tae = myCalc.calculateTae(tin, interestsPaymentFrequency);
-	console.log('The TAE calculated is: ' + tae);
 	res.render('index',
 	  { title : 'Home' }
 	 );
 });
 
 app.post('/tae', function(req, res) {
-	var val = req.body.tin;
-	res.send('tin ' + val);
+	myCalc = new Calculator();
+	tae = myCalc.calculateTae(req.body.tin, req.body.paymentFrequency);
+
+	res.send({tae: tae});
 });
 
 app.listen(port);

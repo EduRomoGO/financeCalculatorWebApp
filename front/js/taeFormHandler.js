@@ -1,8 +1,11 @@
 var button = document.getElementById('calculateButton');
 
 $('#calculateButton').on('click', function() {
-	var params = { tin: 3 };
+	var params = {
+		tin: $('#tin').val(),
+		paymentFrequency: $('#paymentFrequency').val()
+	};
 	$.post('/tae', params, function(data) {
-		console.log(data);
+		$('.taeResult').html('The tae calculated is: ' + data.tae);
 	});
 });
