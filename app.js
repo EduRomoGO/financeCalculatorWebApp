@@ -27,5 +27,6 @@ app.post('/tae', function(req, res) {
 	res.send({tae: tae});
 });
 
-app.listen(port);
-console.log('server listening on port: ' + port);
+app.listen(process.env.PORT || port, function() {
+	console.log('server listening on port: ' + port);
+});
