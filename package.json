@@ -4,7 +4,8 @@
   "description": "finance",
   "main": "app.js",
   "scripts": {
-    "test": ""
+    "test": "",
+    "start": "app.jss"
   },
   "keywords": [
     "finance"
