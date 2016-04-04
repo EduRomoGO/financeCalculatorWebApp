@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "",
-    "start": "app.jss"
+    "start": "app.js"
   },
   "keywords": [
     "finance"
