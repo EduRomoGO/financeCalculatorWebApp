@@ -25,5 +25,8 @@
     "express": "latest",
     "jade": "^1.11.0",
     "require": "latest"
-  }
+  },
+  "engines": {
+    "node": "4.4.2"
+  },
 }
