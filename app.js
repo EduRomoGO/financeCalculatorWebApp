@@ -11,6 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/js', express.static(__dirname + '/front/js'));
+app.use('/css', express.static(__dirname + '/front/css'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
